@@ -105,7 +105,7 @@ ALTER TABLE Cliente ADD CONSTRAINT FK_Cliente_3
 ALTER TABLE Cliente ADD CONSTRAINT FK_Cliente_4
     FOREIGN KEY (fk_Endereco_ID_END_CLI)
     REFERENCES Endereco (ID_END_CLI)
-    ON DELETE RESTRICT;
+    /* MANTER ASSIM SE USAR ORACLE: ON DELETE RESTRICT */;
  
 ALTER TABLE Equipamento ADD CONSTRAINT FK_Equipamento_2
     FOREIGN KEY (fk_OS_Numero_OS)
@@ -120,7 +120,7 @@ ALTER TABLE Tecnico_Endereco_tec ADD CONSTRAINT FK_Tecnico_Endereco_tec_2
 ALTER TABLE Endereco ADD CONSTRAINT FK_Endereco_2
     FOREIGN KEY (fk_Telefone_cli_ID_TEL)
     REFERENCES Telefone_cli (ID_TEL)
-    ON DELETE RESTRICT;
+    /* MANTER ASSIM SE USAR ORACLE: ON DELETE RESTRICT */;
  
 ALTER TABLE Possui_Vinculo ADD CONSTRAINT FK_Possui_Vinculo_1
     FOREIGN KEY (fk_Cliente_Cod_Cli)
@@ -135,7 +135,7 @@ ALTER TABLE Possui_Vinculo ADD CONSTRAINT FK_Possui_Vinculo_2
 ALTER TABLE Pertence ADD CONSTRAINT FK_Pertence_1
     FOREIGN KEY (fk_Contrato_Num_Contrato)
     REFERENCES Contrato (Num_Contrato)
-    ON DELETE RESTRICT;
+    /* MANTER ASSIM SE USAR ORACLE: ON DELETE RESTRICT */;
  
 ALTER TABLE Pertence ADD CONSTRAINT FK_Pertence_2
     FOREIGN KEY (fk_Equipamento_Cod_EQ)
