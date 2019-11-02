@@ -1,12 +1,12 @@
-/* Lógico_1: */
+/* Logico_1: */
 
 CREATE TABLE Cliente (
-    Nome_Fantasia VARCHAR,
+    Nome_Fantasia VARCHAR2,
     CNPJ INT,
     Cod_Cli INT PRIMARY KEY,
-    Razao_Social VARCHAR,
-    fk_Endereco_Cli_Endereco_Cli_PK VARCHAR,
-    Regiao VARCHAR,
+    Razao_Social VARCHAR2,
+    fk_Endereco_Cli_Endereco_Cli_PK VARCHAR2,
+    Regiao VARCHAR2,
     fk_Equipamento_Cod_EQ INT,
     fk_Contrato_Num_Contrato INT
 );
@@ -14,10 +14,10 @@ CREATE TABLE Cliente (
 CREATE TABLE Equipamento (
     Cod_EQ INT PRIMARY KEY,
     Num_Serie INT,
-    Modelo VARCHAR,
-    Fabricante VARCHAR,
+    Modelo VARCHAR2,
+    Fabricante VARCHAR2,
     Data_Fabr DATE,
-    Pais_Origem VARCHAR,
+    Pais_Origem VARCHAR2,
     Cod_Cli INT,
     Num_Contrato INT,
     fk_OS_Numero_OS INT
@@ -28,22 +28,22 @@ CREATE TABLE OS (
     Data_Geracao DATE,
     Cod_CLI INT,
     Cod_EQ INT,
-    Desc_Problema VARCHAR,
-    Desc_Servico VARCHAR,
+    Desc_Problema VARCHAR2,
+    Desc_Servico VARCHAR2,
     Data_Inicio DATE,
     Data_Termino DATE,
-    Tipo_Servico VARCHAR,
+    Tipo_Servico VARCHAR2,
     Cod_Tecnico INT,
-    Arquivo_Dig VARCHAR,
+    Arquivo_Dig VARCHAR2,
     Valor_Visita INT
 );
 
 CREATE TABLE Tecnico (
     Cod_Tecnico INT PRIMARY KEY,
-    Nome_Tec VARCHAR,
-    Area_Atuacao VARCHAR,
+    Nome_Tec VARCHAR2,
+    Area_Atuacao VARCHAR2,
     RG INT,
-    fk_Endereco_Tec_Endereco_Tec_PK VARCHAR,
+    fk_Endereco_Tec_Endereco_Tec_PK VARCHAR2,
     fk_OS_Numero_OS INT
 );
 
@@ -58,28 +58,28 @@ CREATE TABLE Contrato (
 );
 
 CREATE TABLE Endereco_Cli (
-    Endereco_Cli_PK VARCHAR NOT NULL PRIMARY KEY,
-    Logradouro VARCHAR,
+    Endereco_Cli_PK VARCHAR2 NOT NULL PRIMARY KEY,
+    Logradouro VARCHAR2,
     Numero INT,
-    Complemento VARCHAR,
-    Bairro VARCHAR,
-    Cidade VARCHAR,
-    Pais VARCHAR,
+    Complemento VARCHAR2,
+    Bairro VARCHAR2,
+    Cidade VARCHAR2,
+    Pais VARCHAR2,
     CEP INT,
-    Nome_Responsavel VARCHAR,
+    Nome_Responsavel VARCHAR2,
     Telefone INT
 );
 
 CREATE TABLE Endereco_Tec (
-    Endereco_Tec_PK VARCHAR NOT NULL PRIMARY KEY,
-    Logradouro VARCHAR,
+    Endereco_Tec_PK VARCHAR2 NOT NULL PRIMARY KEY,
+    Logradouro VARCHAR2,
     Numero INT,
-    Complemento VARCHAR,
-    Cidade VARCHAR,
-    Pais VARCHAR,
+    Complemento VARCHAR2,
+    Cidade VARCHAR2,
+    Pais VARCHAR2,
     CEP INT,
     Telefone INT,
-    Bairro VARCHAR
+    Bairro VARCHAR2
 );
 
 CREATE TABLE Cod_EQ (
