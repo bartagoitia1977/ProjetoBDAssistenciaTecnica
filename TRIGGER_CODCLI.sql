@@ -1,0 +1,8 @@
+CREATE OR REPLACE TRIGGER Nao_Repete_CodCli
+BEFORE INSERT ON Cliente
+FOR EACH ROW
+BEGIN
+    SELECT Cliente.NEXTVAL
+    INTO :new.Cod_Cli
+    FROM dual;
+END;
